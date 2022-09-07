@@ -1,1 +1,641 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      * {
+        box-sizing: border-box
+      }
+      body {
+        font-family: Verdana, sans-serif;
+        margin: 0
+      }
+      .mySlides {
+        display: none
+      }
+      img {
+        vertical-align: middle;
+      }
+      .slideshow-container {
+        max-width: 600px;
+        position: relative;
+        margin: auto;
+      }
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      /* Caption text */
+      .text {
+        color: #ffffff;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #ffffff;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #999999;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .active,
+      .dot:hover {
+        background-color: #111111;
+      }
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px
+        }
+      }
+    </style>
+  </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>stephanieacardenas.github.io</title>
+
+  <!-- favicon -->
+  <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+  <!-- include Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- include fontawesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
+  <link href="css/jquery.bsPhotoGallery.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Stephanie A. Cardenas</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+
+				<!-- research interests dropdown -->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Research</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      			<a class="dropdown-item" href="#alibi-generation">Alibi generation and evaluation</a>
+      			<a class="dropdown-item" href="#plea-bargain-decisions">Plea bargain decision-making</a>
+  					<a class="dropdown-item" href="#police-use-of-force">Police use of force incidents</a>
+  					<a class="dropdown-item" href="#emotions-and-false-memories">Emotions and false memories</a>
+    			</div>
+  			</li>
+    		<li class="nav-item">
+      		<a class="nav-link js-scroll-trigger" href="#teaching">Teaching &amp; Mentorship</a>
+    		</li>
+    		<li class="nav-item">
+      		<a class="nav-link js-scroll-trigger" href="#nsf-gfrp-resources">NSF GRFP Resources</a>
+    		</li>
+				<li class="nav-item">
+      		<a class="nav-link js-scroll-trigger" href="#CV">CV</a>
+    		</li>
+    	</ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+
+  <!-- quickabout -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">stephanie
+          <span class="text-primary">cardenas</span>
+        </h1>
+        <div class="subheading mb-5">psychology and law · she/her/hers · Williamstown, MA
+        </div>
+        <p class="lead mb-5">Hi there!
+
+          I am a Visiting Assistant Professor at Williams College and a National Science Foundation Graduate Research Fellow.
+
+          I earned my PhD in psychology from John Jay College of Criminal Justice/The Graduate Center, CUNY.
+
+My research examines the social-cognitive dimensions of judgments and decision-making in contemporary justice areas such as alibi evaluations, plea bargains, and police-civilian altercations. </p>
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/stephanie-aurora-cardenas-phd-44863564" target="_new">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+		      <a href="https://scholar.google.com/citations?pli=1&user=p9L3EkUAAAAJ" target="_new" alt = "Google Scholar profile">
+            <i class="fab fa-google"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+	<!-- quickresearch -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="research">
+      <div class="w-100">
+        <h2 class="mb-5">Research</h2>
+	<p class="section-intro"> Police, prosecutors, judges, and juries make assumptions about how people think and behave that are not always consistent with psychological science. Legal judgments based on erroneous assumptions undermine the fair administration of justice, foment racial and socioeconomic inequalities, and lead to wrongful convictions. To challenge these assumptions, I have generated several lines of research examining the influence of psychological biases on legal judgments: </p>
+
+	<ul>
+		<li><p class="section-intro">How can we improve alibi memories and how these are perceived?</p></li>
+		<li><p class="section-intro">How do defendants and their attorneys make plea decisions?</p></li>
+		<li><p class="section-intro">What factors influence how laypeople interpret police use of force?</p></li>
+		<li><p class="section-intro">What is the relationship between emotions and false memories?</p></li>
+	</ul>
+
+  <p <a> At John Jay, I was advised by <a href="https://www.saulkassin.org/" target="_new">Saul Kassin</a> and <a href="https://www.jjay.cuny.edu/faculty/deryn-strange" target="_new">Deryn Strange</a>. I also collaborate with <a href="https://as.nyu.edu/faculty/emily-balcetis.html" target="_new">Emily Balcetis</a> and <a href="https://www.smith.edu/academics/faculty/yael-granot" target="_new"> Yael Granot. </a> </p>
+
+
+	<p class="section-intro">Scroll down for more information.</p>
+
+	</section>
+
+	<hr class="m-0">
+
+  <!-- alibis -->
+	 <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="alibi-generation">
+      <div class="w-100">
+        <h3 class="mb-5">Alibi Generation and Evaluation</h3>
+
+
+	   <blockquote>
+		<p class="mb-0">"There’s nothing tangible I can do to remember the day. There’s nothing I can do to make me remember." </p>
+		<footer class="blockquote-footer">Adnan Sayed (Serial)</footer>
+		</blockquote>
+
+		<p class="section-intro"> Some suspects, like Adnan Syed, cannot recall their alibis. Others, like Eric Blackmon, not only recall their alibis, but also produce various witnesses that the state or their own legal counsel either fail to investigate or judge to be noncredible. The inability to provide an alibi—let alone a compelling one—contributes to wrongful convictions (Wells et al., 1998). Because an alibi defense can exonerate an innocent suspect, it is critical that we understand why alibi providers fail to recall their whereabouts, what law enforcement can do to improve recall, and what factors diminish the credibility of alibis. For example, what mnemonic tools are available for improving alibi generation of innocent suspects? What metacognitive cues distinguish the alibis of innocent and guilty people? How does a presumption of guilt influence how people judge the believability of an alibi and whether an alibi is investigated? How might a violated expectation of consistency — between an alibi provider's stereotyped identity and their stereotype-<i>inconsistent</i> alibi — influence how law enforcement interpret the case facts? </p>
+
+	   <!-- ALIBI CITATIONS -->
+	   <h5>Selected work</h5>
+	    <ul class="fa-ul mb-0 citations">
+
+		<li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			<b>Cardenas, S.A.</b>, Crozier, W.E., &amp; Strange, D. (2020). Right Place, Wrong Time: The
+Limitations of Mental Reinstatement of Context on Alibi-Elicitation. <i>Psychology,
+Crime, and Law</i>. <a href="https://doi.org/10.1080/1068316X.2020.1798424" target="_new"><b>doi.org/10.1080/1068316X.2020.1798424</b></a>
+		<li><span class="fa-li" ><i class="far fa-file-alt text-warning"></i></span>
+			<b>Cardenas, S.A.</b>, Crozier, W.E., &amp; Strange, D. (2022) The Effect of Erronenous Alibis. In M. Kienzle &amp; J. Behl (Eds.) <i> Alibis and Corroborators: Psychological, Criminological, and Legal Perspectives. </i> New York, NY: Springer. <a href="https://doi.org/10.1007/978-3-030-95663-9_9" target="_new"><b>doi.org/10.1007/978-3-030-95663-9_9</b></a>
+		</li>
+
+		<li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			<b>Cardenas, S.A.</b> (2018). Improving Alibi Generation by Asking the Right Questions and Visualizing the Right Responses. Master's Thesis submitted for the John Jay College of Criminal Justice Doctoral Program in Psychology milestone.
+		</li>
+
+    <li><span class="fa-li" ><i class="fas fa-comment text-warning"></i></span>
+      Crozier, W.E., <b>Cardenas, S.A.</b>, &amp; Strange, D. (2019) Beyond Believability: Observer's Credibility and Memory Quality Ratings for Mock Crime Alibis. Paper presented at SARMAC, Cape Cod, MA.
+    </li>
+
+		</ul>
+		</p>
+
+
+	</section>
+
+	<hr class="m-0">
+
+	 <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="plea-bargain-decisions">
+      <div class="w-100">
+
+	  <h3 class="mb-5">Plea Bargain Decision-Making</h3>
+
+    <blockquote>
+   <p class="mb-0"> "...criminal justice today is for the most part a system of pleas, not a system of trials.”
+ </p>
+   <footer class="blockquote-footer"> Justice Kennedy delivering the Supreme Court Majority Opinion in <i>Lafler v. Cooper </i> (2012, p. 3) </footer>
+   </blockquote>
+
+	  <p class="section-intro"> Currently, 95% of all criminal cases in the U.S. are resolved via guilty pleas, not trials. My work is interested in the structural issues and psychological biases that influence judges and prosecutors involved in the construction of plea offers and defendants and attorneys who must decide to accept or reject those offers. Using both a high-stakes experimental laboratory paradigm and immersive plea simulations, we examine how beliefs about deservingness and feelings of guilt correlate with a willingness of defendants to take responsibility for wrongdoings not committed. We also examine how socio-economic status and cognitive biases, including anchoring and adjustment failures and temporal discounting, inform consideration of distal versus proximal collateral conseequences and willingness to plead guilty. Finally, we investigate how federal and state judges evaluate the ethicality of various acts of prosecutorial discretion, such as overcharging to elicit guilty pleas, providing time-limited plea offers, and requiring plea waivers. </p>
+
+	  <!-- PLEA BARGAIN CITATIONS -->
+
+	  <h5>Selected work</h5>
+	  <ul class="fa-ul mb-0 citations">
+		 <li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			<b>Cardenas, S.A.</b> (in press). Charged Up and Anchored Down: A Test of Two Pathways to Judgmental and Decisional Anchoring Biases in Plea Negotiations. <i>Psychology, Public Policy, and Law.</i> <a href="https://doi.org/10.31234/osf.io/7s4vz" target="_new"><b>doi.org/10.31234/osf.io/7s4vz</b></a></li>
+
+		<li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+      <b>Cardenas, S.A.</b> (2021). The Influence of Prosecutorial Overcharging on Defendant and Defense Attorney Plea Decision Making: Documenting and Debiasing the Anchoring Effect. Dissertation Submitted in Partial Fulfillment of the Doctoral Degree at the Graduate Center, CUNY. <a href="https://academicworks.cuny.edu/gc_etds/4607" target="_new"><b>academicworks.cuny.edu/gc_etds/4607</b></a></li>
+
+    <li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+		 <b>Cardenas, S.A.</b> Sanchez, P.Y., Linares, R., &amp; Kassin, S.M. (Invited resubmission under review). The "Partial Innocence" Effect: False Guilty Pleas to Partially Unethical behaviors. <a href="https://doi.org/10.31234/osf.io/nr5bv" target="_new"><b>doi.org/10.31234/osf.io/nr5bv</b></a>
+		</li>
+
+    <li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			Kassin, S.M., <b>Cardenas, S.A.</b>, Meterko, V., &amp;  Barksdale, F. (forthcoming). Prosecutorial Misconduct: Assessment of Perspectives from the Bench. <i>Court Review</i>. <a href="https://osf.io/cdvbh?view_only=c4b586ee1f974400ab9f9578525aede2" target="_new"><b>osf.io/cdvbh</b></a>
+		</li>
+
+    <li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			 <b>Cardenas, S.A.</b> Lindeman, S. &amp; Draper, E.M. (in prep). Impoverished Cognition? Examining the Direct and Indirect Influences of Poverty on Guilty Pleas.
+		</li>
+
+		</li>
+	   </ul>
+
+	  </div>
+	  </section>
+
+	<hr class="m-0">
+
+	  <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="police-use-of-force">
+	  <div class="w-100">
+
+      <h3 class="mb-5">Police Use of Force Incidents</h3>
+		<p class="section-intro"> In the wake of protests over fatal police shootings of unarmed Black men, our work examines why people come to such disparate conclusions when watching recorded police-civilian encounters. Excitingly, this line of research is in its early stages. We are investigating the motivated processes by which individuals misperceive distances when viewing video evidence depicting police-civilian altercations and demonstrate the consequences for threat appraisals, justifiability determinations, and punishment decisions. This work challenges the assumed objectivity of police footage and its appropriateness for rendering judgments over the justifiability of police use-of-force incidents. </p>
+
+		<!-- POLICE CITES -->
+		<h5>Selected work</h5>
+		<ul class="fa-ul mb-0 citations">
+
+		<li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			<b>Cardenas, S.A.</b>, Jones, K.A., Granot. Y., Stoker, K., &amp; Balcetis, E. (in prep). Within Striking Distance: Appraisals of Civilian Threat Bias Distance and Formidability Perceptions in Recorded Police Use of Force Incidents.
+		</li>
+
+    <li><span class="fa-li" ><i class="fas fa-comment text-warning" ></i></span>
+			<b>Cardenas, S.A.</b>, Jones, K.A., Granot. Y., Stoker, K., &amp; Balcetis, E. (2022). Motivated Distance Perception: The Effect of Threat and Identification with the Police on Perceived Proximity in Recorded Police-Civilian Altercation. Paper presented remotely in symposium “Effects of Perceptions of Force on Legal Legitimacy and Decision-Making” at the 2022 Annual Global Meeting on Law & Society Association (CRN 54 Law, Society, and Psychological Science),Lisbon, Portugal.
+		</li>
+
+
+    <li><span class="fa-li" ><i class="fas fa-comment text-warning" ></i></span>
+			Jones, K.A., <b>Cardenas, S.A.</b>, Balcetis, E., &amp; Granot. Y. (2019). We're on the Same Team, So I know Where You Stand: Vicarious Threat Biases Distance Perception. Paper presented in symposium, “Emerging issues: Body-worn cameras elicit cognitive concerns” at the Meeting of the Society for Applied Research in Memory and Cognition (SARMAC), Cape Cod, MA.
+		</li>
+
+
+		</ul>
+
+		</div>
+		</section>
+
+		<hr class="m-0">
+
+	<section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="emotions-and-false-memories">
+      <div class="w-100">
+        <h3 class="mb-5">Emotions, Expectations, and False Memories</h3>
+
+		<p class="section-intro"> How do our emotions and how we expect to feel influence what we remember? We investigated how emotional evidence presented at trial influences the emotions that jurorsf feel toward the victim and defendant, as well as their memories for the trial facts and their verdict decisions. In other work, we examined how an interventions, based on implementation intentions and guided expectations, influence how people remember lab-based analogue traumatic memories and their analogue ptsd symptoms. Both lines of research formed the basis for two Master's students theses, Auset Alexander, and Karina Patel (at NYU). I am excited to continue to develop both of these lines of research with future students! </p>
+
+		<!-- emotion cites -->
+		<h5>Selected work</h5>
+		<ul class="fa-ul mb-0 citations">
+			<li><span class="fa-li" ><i class="far fa-file-alt text-warning" ></i></span>
+			<b>Cardenas, S.A.</b>, Alexander, A., &amp; Strange, D. (in prep). Life or Death in Plain Sight: The Role of Emotional Evidence on Juror Emotions, Decision-Making &amp; Memory. Poster presented at the American Psychology-Law Society Conference, Portland, OR. <a href="https://osf.io/4pksz/" target="_new"><b>osf.io/4pksz</b></a>
+			</li>
+
+			<li><span class="fa-li" ><i class="far fa-file-alt text-warning"></i></span>
+			<b>Cardenas, S.A.</b>, Patel, K., &amp; Strange. D. (in prep). Expectations of social support decrease immediate negative affective response and amplification of false traumatic memories.</li>
+
+		</ul>
+
+    </section>
+
+    <hr class="m-0">
+
+	<!-- quickteaching-->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="teaching">
+      <div class="w-100">
+        <h2 class="mb-5">Teaching &amp; Mentorship</h2>
+
+		<blockquote>
+		<p class="mb-0">“It is fuel, and the absence of the fuel <br/>
+together, that make fire possible.<br/>
+We only need to lay a log <br/>
+lightly from time to time.<br/>
+A fire <br/>
+grows <br/>
+simply because the space is there, <br/>
+with openings <br/>
+in which the flame <br/>
+that knows just how it wants to burn <br/>
+can find its way." <br/>
+</p>
+		<footer class="blockquote-footer">Judy Brown, <i> Fire </i></footer>
+		</blockquote>
+
+
+    <p class="section-intro">
+My teaching and mentorship goals are to empower students to become critical thinkers and agents of their own learning in an environment that is compassionate and enables them to thrive. To that end, I apply evidence-based principles of how students learn best to ensure that students leave my courses more confident, knowledgeable, and conscientious peers than they were before. As <a href="https://www.jjay.cuny.edu/news/senior-spotlight-yi-chen-wu-overcomes-disability-becomes-co-valedictorian" target="_new">Yi-Chen Wu '22 </a> — a past student, research assistant, and co-valedictorian — put it, “...you don’t have to step out of your comfort zone, you just have to expand it.”
+    </p>
+
+		<!-- https://www.w3schools.com/howto/howto_css_timeline.asp -->
+		<h5>Instructor of record</h5>
+		<ul class="timeline citations">
+
+		<li>
+			<b>PSYC 402: Blessings and Blunders of Human Memory</b>, Williams College
+			<p class="float-right">Fall 2022</a>
+			<p>Student-led seminar course (12 students) [<a href="https://psyc402.notion.site/psyc402/PSYC-402-Blessings-and-Blunders-of-Human-Memory-046ce8130b17403e90dcbac1d9ba449e" target="_new">Syllabus</a>]</p>
+		</li>
+
+		<li>
+			<b>PSYC 404: Bias &amp; Discrimination: Sources and Consequences</b>, Williams College
+			<p class="float-right">Fall 2021</a>
+			<p>Student-led seminar course (14 students) [<a href="https://docs.google.com/document/d/157kSHIY8L89ZjNbibV41rzrfosraaNUv/edit?usp=sharing&ouid=103347244731627595184&rtpof=true&sd=true" target="_new">Syllabus</a>]</p>
+		</li>
+
+		<li>
+			<b>PSYC 101: Introductory Psychology</b>, Williams College
+			<p class="float-right">Fall 2021, Spring 2022, Fall 2022</a>
+			<p>Team-taught lecture course with a lab (170+ students) [<a href="https://docs.google.com/document/d/1WrEaW6FFZGKkGGxaoqwBJ2uM3v1JNPGrnNu5qr8oT-s/edit?usp=sharing" target="_new">Lab</a>]</p>
+		</li>
+
+		<li>
+			<b>PSYC 349: Psychology and Law</b>, Williams College
+			<p class="float-right">Spring 2022</a>
+			<p>Seminar course with empirical lab component (10 students) [<a href="https://psyc349.notion.site/psyc349/PSYC-349-Psychology-and-Law-6e51c2da70ad4660afc77f721893d132" target="_new">Syllabus</a>]</p>
+		</li>
+
+		<li>
+			<b>PSYC 200: Cognitive Psychology</b>, John Jay College of Criminal Justice
+			<p class="float-right">Fall 2020</a>
+			<p>Lecture course (36 students) [<a href="https://drive.google.com/file/d/1tAXgdkD-mm2AjJkHvRQn8HMcn-xVMR2U/view?usp=sharing" target="_new">Syllabus</a>]</p>
+		</li>
+
+		<li>
+			<b>PSYC 221: Social Psychology</b>, John Jay College of Criminal Justice
+			<p class="float-right">Fall 2019</a>
+			<p>Team-taught lecture course (two sections: 35 students, 37 students)</p>
+		</li>
+
+		<li>
+			<b>PSYC 311: Research Methods in Psychology</b>, John Jay College of Criminal Justice
+			<p class="float-right">Summer 2019</a>
+			<p>Team-taught lecture course with empirical lab component (13 students)</p>
+		</li>
+
+		</ul>
+
+		<h5>Other selected teaching positions</h5>
+		<ul class="timeline citations">
+
+		<li>
+			<b>PSYC 311 Research Methods in Psychology</b>, John Jay College of Criminal Justice
+			<p class="float-right">Fall 2018, Spring 2019, Fall 2019, Spring 2020</a>
+			<p>Laboratory Instructor. Designed and taught the lab section (1.5 hours per week) of a larger course.</p>
+		</li>
+
+		<li>
+			<b>PSYC 200 Cognitive Psychology (F17, F20, S21)</b>, John Jay College of Criminal Justice
+			<p class="float-right">Fall 2017, Fall 2020, Spring 2021</a>
+			<p>Graduate Teaching Assistant.</p>
+		</li>
+
+		<li>
+			<b>CUNY Teaching and Learning Center</b>, John Jay College of Criminal Justice
+			<p class="float-right">Spring 2018</a>
+			<p>Non-Teaching Adjunct.</p>
+		</li>
+
+		</ul>
+
+		<h5>Selected research mentorship</h5>
+
+		<ul class="fa-ul mb-0">
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Rosalba Linares</b> (Williams senior thesis): "Do Stereotype-Inconsistent Alibis Bias Evaluations of Alibi Providers and Case Development?"
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Destiny Crisp</b> (Williams senior thesis): "Does A Guilty Presumptive Context Bias Alibi Case Assessment?"
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Brooke Flagler</b> (Williams senior thesis): "Do Incidental Feelings of Guilt Lead to Self-Incrimination?"
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Auset Alexander</b> (John Jay master's thesis co-advisor): "Brace for Impact: The Effect of Victim Impact Evidence on Juror
+Memory Distortion and Sentencing Decisions in Capital Trials."
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Karina Patel</b> (NYU master's thesis co-advisor): "Effects of Pre-traumatic Stress Reactions and Social Support on Adult PTSD Symptoms."
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Rosalba Linares</b> (Williams independent study): "The Psychology of Partial Innocence"
+
+			<li><span class="fa-li" ><i class="fas fa-user-circle text-warning"></i></span>
+				<b>Emma Draper</b> (Williams independent study): "Elicitation and Measurement of Emotions"
+
+		</ul>
+		</p>
+
+		<div class="slideshow-container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 7</div>
+        <img src="img/lab-photo-summer-2022.jpg" style="width:100%">
+        <div class="text">Summer Science Fellowships ‘22 Psychology and Law Lab (L-R) Sarah Lindeman ‘24, Rosalba Linares ‘23, Stephanie Cardenas, Devika Goel ‘24, Destiny Crisp ‘23. </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">3 / 7</div>
+        <img src="img/IMG_4876.jpg" style="width:100%">
+        <div class="text">Racial Identities and Priming Influence Willingness to Engage in Collective Action (Naomi Castle '23, August Bougie '23, Abby Atonal Rodriguez '23)</div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">4 / 7</div>
+        <img src="img/IMG_4878.jpg" style="width:100%">
+        <div class="text">An Eye For … A Nose?: Absent Defendant’s Fate Has Minimal Influence on Sentencing Lengths of Present Defendant (Brooke Flagler '23 and Greta Gruber '23) </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">7 / 7</div>
+        <img src="img/IMG_4886.jpg" style="width:100%">
+        <div class="text">Indigence and Collateral Consequences: Is Poverty a Risk Factor for Pleading Guilty? (Sarah Lindeman '24 and Emma Draper '22)</div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">5 / 7</div>
+        <img src="img/IMG_4879.jpg" style="width:100%">
+        <div class="text">Sarah Lindeman '24 and Emma Draper '22 explaining their project to a faculty member and students </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">6 / 7</div>
+        <img src="img/IMG_4883.jpg" style="width:100%">
+        <div class="text">Hearing is Believing: Accent Has No Effect on Alibi Believability (Lucera Whitmore '23, Kerryann Reynolds '24, Jacob Fink '23) </div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">2 / 7</div>
+        <img src="img/IMG_4874.jpg" style="width:100%">
+        <div class="text">Lucera Whitmore '23, Kerryann Reynolds '24, Jacob Fink '23 explaining their work to a faculty member</div>
+      </div>
+      <div class="mySlides">
+        <div class="numbertext">2 / 7</div>
+        <img src="img/IMG_4874.jpg" style="width:100%">
+        <div class="text">CAPTION</div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+    </div>
+	</div>
+
+	</section>
+
+	<hr class="m-0">
+
+
+	<!-- quicknsf -->
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="nsf-gfrp-resources">
+      <div class="w-100">
+        <h2 class="mb-5">NSF GRFP Resources</h2>
+       <p class="section-intro">For students interested in applying, this section provides the materials I submitted with my application to the <a href="https://www.nsfgrfp.org/" target="_new">NSF GRFP</a>. I was awarded under the Psychology – Personality and Individual Differences category.</p>
+
+		<ul>
+			<li><a href="https://drive.google.com/file/d/0B_G-Z7mSwC9sbkFZalRuS3lFWUU/view?resourcekey=0-dNpShqb27WTd1Bfn-sqqRQ" target="_new">Personal Statement, Relevant Background, and Future Goals</a></li>
+			<li><a href="https://drive.google.com/file/d/0B_G-Z7mSwC9sbzJRNldUd0UxNjA/view?resourcekey=0--3lDLcwSCIb20mZaAY5hbg" target="_new">Graduate Research Statement</a></li>
+			<li><a href="https://drive.google.com/file/d/0B_G-Z7mSwC9sYU9xQ3lhclE5alU/view?resourcekey=0-sQY2SdNPKbllOsk5ZVBMRg" target="_new">Reviewer Feedback</a></li>
+		</ul>
+
+		<h5>About Me</h5>
+		<p class="section-intro">I was a college graduate working at the National Institutes of Health while applying to graduate school at the time when I submitted my application. I also applied to the <a href="http://sites.nationalacademies.org/PGA/FordFellowships/PGA_171962" target="_new">Ford Foundation Predoctoral Fellowship</a> and did not win here (received Honorable Mention) although my application was nearly identical to the NSF one. I had a good amount of research experience but none of it was particularly relevant to my selected program of study as I had changed my mind about which area of psychology I wanted to pursue. My “Relevant Background” shows this as do some of the reviewer comments. I think it’s helpful to others to realize that research is research and to not be discouraged about applying if your past work doesn’t align perfectly with your future goals.</p>
+
+
+		<h5>Additional Resources</h5>
+
+		<ul>
+			<li><a href="http://www.pathwaystoscience.org/pdf/Schlatterer.pdf" target="_new">Presentation</a> by a program director at the NSF</a></li>
+			<li><a href="https://drive.google.com/file/d/0B_G-Z7mSwC9sRzFMaXdmOExyUFE/view?usp=sharing" target="_new">Notes</a> from a presentation by a former NSF GRFP reviewer</li>
+			<li>Alex Lang’s <a href="http://www.alexhunterlang.com/nsf-fellowship" target="_new">website</a> has an amazing collection of application materials from students in various disciplines. It was an invaluable resource to me as an applicant and I recommend any interested students take a look.</li>
+		</ul>
+		 <p class="section-intro">If you have any questions, feel free to shoot me an email at <a href="mailto:sac1@williams.edu">sac1@williams.edu</a>.</p>
+    </div>
+    </section>
+
+    <hr class="m-0">
+
+	<!-- quickcv -->
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="CV">
+      <div class="w-100">
+        <h2 class="mb-5">CV</h2>
+
+		<a class="btn btn-outline-warning" href="files/cv-cardenas.pdf" target="_new" role="button"><font color=#000000>download CV</font></a>
+
+      </div>
+    </section>
+
+
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
+
+  <!-- added -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if(n > slides.length) {
+      slideIndex = 1
+    }
+    if(n < 1) {
+      slideIndex = slides.length
+    }
+    for(i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for(i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>

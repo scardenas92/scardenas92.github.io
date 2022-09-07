@@ -1,0 +1,260 @@
+/*!
+ * Start Bootstrap - Resume v5.0.5 (https://startbootstrap.com/template-overviews/resume)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
+ */body{font-family:Muli,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';padding-top:54px;color:#868e96}
+
+ @media (min-width:992px)
+ {body{padding-top:0;padding-left:17rem}}
+
+ h1,h2,h3,h4,h5,h6{
+	 font-family: 'Josefin Sans', sans-serif;
+	 font-weight:700;
+	 text-transform:;color:#343a40
+}
+
+h1{
+	font-size:5.5rem;
+	line-height:5.6rem
+}
+
+h2{
+	 font-size:3.5rem
+}
+
+h3{
+	font-size:2.5rem
+}
+
+h4{
+	line-height: 2rem
+}
+
+p.lead{
+	font-size:1.10rem;
+	font-weight:400
+	}
+
+.subheading{
+	text-transform:;
+	font-weight:500;
+	font-family:font-family: 'Josefin Sans', sans-serif;
+	font-size:1.5rem
+}
+
+.section-intro{
+  font-size:1.1rem;
+}
+
+.social-icons
+a{
+	display:inline-block;
+	height:3.5rem;width:3.5rem;
+	background-color:#495057;
+	color:#fff!important;
+	border-radius:100%;
+	text-align:center;
+	font-size:1.5rem;
+	line-height:3.5rem;
+	margin-right:1rem
+}
+
+.social-icons a:last-child{
+	margin-right:0
+	}
+
+.social-icons a:hover{
+	background-color:#583382
+}
+
+.dev-icons{
+	font-size:3rem}
+
+.dev-icons.list-inline-item i:hover{
+	color:#583382
+	}
+
+#sideNav
+
+.navbar-nav .nav-item .nav-link{
+	font-weight:800;
+	letter-spacing:.05rem;
+	text-transform:uppercase
+}
+
+#sideNav .navbar-toggler:focus{
+	outline-color:#d48a6e
+}
+
+@media (min-width:992px){
+
+#sideNav{
+	text-align:center;
+	position:fixed;
+	top:0;left:0;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-ms-flex-direction:column;
+	flex-direction:column;
+	width:17rem;
+	height:100vh
+}
+
+#sideNav
+
+.navbar-brand{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	margin:auto auto 0;
+	padding:.5rem
+}
+
+#sideNav
+.navbar-brand
+.img-profile{
+	max-width:10rem;
+	max-height:10rem;
+	border:.5rem solid rgba(255,255,255,.2)
+}
+
+#sideNav .navbar-collapse{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:start;
+	-ms-flex-align:start;
+	align-items:flex-start;
+	-webkit-box-flex:0;
+	-ms-flex-positive:0;
+	flex-grow:0;width:100%;
+	margin-bottom:auto
+}
+
+#sideNav .navbar-collapse .navbar-nav{
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	-ms-flex-direction:column;
+	flex-direction:column;
+	width:100%
+}
+
+#sideNav
+.navbar-collapse
+.navbar-nav
+.nav-item{
+	display:block
+}
+
+#sideNav .navbar-collapse .navbar-nav .nav-item .nav-link{
+	display:block
+}
+
+}
+
+section.resume-section{padding-top:5rem!important;padding-bottom:5rem!important;max-width:75rem}
+section.resume-section .resume-item
+.resume-date{min-width:none}
+
+@media (min-width:768px){
+	section.resume-section{
+		min-height:100vh
+	}
+	section.resume-section .resume-item .resume-date{
+		min-width:18rem
+		}
+	}
+
+@media (min-width:992px){
+	section.resume-section{
+		padding-top:3rem!important;
+		padding-bottom:3rem!important}
+}
+
+.bg-primary{
+	background-color:#583382!important
+}
+
+.text-primary{
+	color:#583382!important
+}
+
+a{
+	color:#583382;
+
+}
+
+/* unvisited link */
+a:link {
+  color: #583382;
+
+}
+
+/* visited link */
+a:visited {
+  color: #583382;
+}
+
+/* mouse over link */
+a:hover {
+  color: #583382;
+}
+
+/* selected link */
+a:active {
+  color: #ffc245;
+  padding-top: 2px;
+}
+
+a:focus {
+	color: ffc245;
+}
+
+/* added */
+
+ul.citations {
+  font-size: 1rem;
+  /*color: #A9A9A9; */
+}
+
+ul li.citations {
+
+}
+
+blockquote {
+	font-size: 1.1rem;
+}
+
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #583382;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
